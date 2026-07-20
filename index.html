@@ -120,6 +120,38 @@
   .thanks{margin-top:14px;color:var(--muted);font-size:13px;font-style:italic}
   .hidden{display:none}
 
+  /* POPUP XÁC NHẬN THAM DỰ */
+  .overlay{
+    position:fixed;inset:0;background:rgba(10,14,24,.75);backdrop-filter:blur(3px);
+    display:flex;align-items:center;justify-content:center;z-index:20;padding:20px;
+    opacity:0;pointer-events:none;transition:.35s;
+  }
+  .overlay.on{opacity:1;pointer-events:auto}
+  .modal{
+    width:100%;max-width:400px;text-align:center;
+    background:linear-gradient(180deg,#26334b,#1d2739);
+    border:1px solid rgba(106,173,220,.5);border-radius:16px;padding:28px 22px;
+    box-shadow:0 0 46px rgba(106,173,220,.25);
+    transform:translateY(14px);transition:.35s;
+  }
+  .overlay.on .modal{transform:translateY(0)}
+  .modal h3{font-family:var(--serif);font-weight:normal;font-size:20px;letter-spacing:1px;color:var(--accent-soft);margin-bottom:8px}
+  .modal p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:20px}
+  .rsvp-btn{
+    display:block;width:100%;margin-top:10px;padding:13px;border-radius:10px;cursor:pointer;
+    font-family:var(--sans);font-size:13.5px;letter-spacing:.5px;transition:.25s;
+  }
+  .rsvp-yes{
+    border:1px solid rgba(140,196,234,.5);font-weight:700;color:#fff;
+    background:linear-gradient(135deg,var(--navy-mid),var(--accent),var(--navy-mid));background-size:220% 100%;
+  }
+  .rsvp-yes:hover{background-position:100% 0;box-shadow:0 0 20px rgba(106,173,220,.4)}
+  .rsvp-maybe,.rsvp-no{
+    border:1px solid rgba(106,173,220,.4);background:transparent;color:var(--muted);
+  }
+  .rsvp-maybe:hover,.rsvp-no:hover{color:#fff;border-color:var(--accent-soft);background:rgba(106,173,220,.1)}
+  .rsvp-done{font-size:14px;color:var(--accent-soft);line-height:1.8;padding:10px 0}
+
   /* confetti xanh - trắng */
   .cf{position:fixed;top:-12px;width:9px;height:14px;z-index:9;pointer-events:none;
     animation:fall linear forwards}
@@ -176,6 +208,17 @@
   </div>
 </div>
 
+<!-- POPUP XÁC NHẬN THAM DỰ -->
+<div class="overlay" id="rsvpOverlay">
+  <div class="modal" id="rsvpModal">
+    <h3>✦ Xác nhận tham dự</h3>
+    <p>Ban Tổ Chức rất mong được đón tiếp bạn tại INTO TOMORROW.<br>Vui lòng cho chúng tôi biết kế hoạch của bạn:</p>
+    <button class="rsvp-btn rsvp-yes" onclick="sendRsvp('Tham dự')">Tôi chắc chắn sẽ tham dự</button>
+    <button class="rsvp-btn rsvp-maybe" onclick="sendRsvp('Xem xét')">Tôi sẽ sắp xếp lịch và phản hồi sau</button>
+    <button class="rsvp-btn rsvp-no" onclick="sendRsvp('Không tham dự')">Rất tiếc, tôi bận lịch nên không thể tham dự</button>
+  </div>
+</div>
+
 <script>
 /* ====== API: link Web App Apps Script của bạn (đuôi /exec) ====== */
 var API_URL = 'https://script.google.com/macros/s/AKfycbxxbxuQ2kHp2kR2C5OwDoe42m7L97GjqninOGpsd6D7Gt14Wz9XGXYLbH9ON9MsMCJQ1Q/exec';
@@ -198,9 +241,26 @@ function $(id){return document.getElementById(id)}
 function show(id){['screen1','screen2','screen3'].forEach(function(s){$(s).classList.toggle('hidden', s!==id)})}
 
 /* Gọi API Apps Script */
-function api(action, code){
-  return fetch(API_URL + '?action=' + action + '&code=' + encodeURIComponent(code))
+function api(action, code, extra){
+  return fetch(API_URL + '?action=' + action + '&code=' + encodeURIComponent(code) + (extra||''))
     .then(function(r){ return r.json(); });
+}
+
+/* POPUP XÁC NHẬN THAM DỰ */
+function openRsvp(){ document.getElementById('rsvpOverlay').classList.add('on'); }
+function sendRsvp(choice){
+  var m=document.getElementById('rsvpModal');
+  m.innerHTML='<div class="rsvp-done">Đang ghi nhận...</div>';
+  api('rsvp', currentCode, '&choice='+encodeURIComponent(choice)).then(function(res){
+    var msg = choice==='Tham dự' ? 'Tuyệt vời! Ban Tổ Chức rất mong được đón tiếp bạn tại sự kiện.' :
+              choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ bạn!' :
+              'Đã ghi nhận. Rất tiếc vì vắng bạn — hẹn gặp lại ở những sự kiện sau!';
+    m.innerHTML='<h3>✦ Cảm ơn bạn</h3><div class="rsvp-done">'+msg+'</div>';
+    setTimeout(function(){document.getElementById('rsvpOverlay').classList.remove('on')},2200);
+  }).catch(function(){
+    m.innerHTML='<h3>✦ Cảm ơn bạn</h3><div class="rsvp-done">Có lỗi kết nối, vui lòng thử lại sau.</div>';
+    setTimeout(function(){document.getElementById('rsvpOverlay').classList.remove('on')},2200);
+  });
 }
 
 /* nền lấp lánh */
@@ -245,7 +305,7 @@ function onCheck(){
     if(res.error){$('err1').textContent='Lỗi hệ thống: '+res.error;return}
     if(!res.valid){$('err1').textContent='ID chưa chính xác. Vui lòng kiểm tra lại hoặc liên hệ Ban Tổ Chức.';return}
     currentCode=code;
-    if(res.used){ showResult(res.prize,res.coupon,res.maskedEmail,true); return }
+    if(res.used){ showResult(res.prize,res.coupon,res.maskedEmail,true,res.rsvp); return }
     $('hello').textContent='Chào mừng Master '+res.name+'!';
     buildStrips(); show('screen2');
   }).catch(function(e){
@@ -266,7 +326,7 @@ function onSpin(){
       $('err2').textContent=res.error?('Lỗi hệ thống: '+res.error):res.message;return;
     }
     animateTo(res.prize,function(){
-      setTimeout(function(){ showResult(res.prize,res.coupon,res.maskedEmail,false); busy=false; },700);
+      setTimeout(function(){ showResult(res.prize,res.coupon,res.maskedEmail,false,res.rsvp); busy=false; },700);
     });
   }).catch(function(e){
     busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ KHÁM PHÁ QUÀ TẶNG ✦';
@@ -297,7 +357,7 @@ function animateTo(prizeName,done){
   }
 }
 
-function showResult(prize,coupon,email,already){
+function showResult(prize,coupon,email,already,rsvp){
   var idx=prizeIndex(prize);
   $('rIcon').textContent = idx>=0?PRIZES[idx].icon:'🎁';
   $('rPrize').textContent=prize;
@@ -305,6 +365,7 @@ function showResult(prize,coupon,email,already){
   $('rEmail').textContent=email;
   if(already) $('screen3').querySelector('.congrats').textContent='✦ Bạn đã nhận quà trước đó!';
   show('screen3');
+  if(!rsvp) setTimeout(openRsvp, 1400); // chưa xác nhận tham dự -> hiện popup
 }
 function copyCoupon(){
   var t=$('rCoupon').textContent;
