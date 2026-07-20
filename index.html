@@ -70,7 +70,8 @@
   .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
   .error{color:#ff9d9d;font-size:13px;margin-top:12px;min-height:18px;line-height:1.6}
 
-  .hello{font-family:var(--serif);font-size:22px;letter-spacing:1.5px;color:var(--accent-soft);margin-bottom:8px}
+  .hello{font-family:var(--serif);font-size:22px;letter-spacing:1.5px;color:var(--accent-soft);margin-bottom:8px;
+    white-space:nowrap;overflow:hidden}
   .hint{color:var(--muted);font-size:13px;margin-bottom:24px;line-height:1.8}
 
   /* SLOT MACHINE */
@@ -91,7 +92,7 @@
   .reel::after{bottom:0;background:linear-gradient(transparent,#101828)}
   .strip{will-change:transform}
   .cell{height:120px;display:flex;align-items:center;justify-content:center}
-  .cell .ic{font-size:52px;line-height:1}
+  .icim{width:52px;height:52px;display:block}
   .spinning .strip{filter:blur(2px)}
 
   /* RESULT */
@@ -100,7 +101,7 @@
     border:1px dashed var(--accent);border-radius:12px;padding:12px 16px;margin:8px 0 14px;
     background:rgba(106,173,220,.08);
   }
-  .prizebox .pic{font-size:44px}
+  .prizebox .pic img{width:56px;height:56px;display:inline-block}
   .prizebox .pname{font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;margin-top:8px;letter-spacing:.5px}
   .couponlbl{font-size:11px;letter-spacing:2px;color:var(--accent-soft);text-transform:uppercase;margin-top:16px;line-height:1.7}
   .coupon{
@@ -160,7 +161,7 @@
   @media(max-width:400px){
     h1.event{font-size:21px;letter-spacing:4px}
     h1.event .lower{font-size:16px;letter-spacing:7px}
-    .reel{height:100px}.cell{height:100px}.cell .ic{font-size:32px}
+    .reel{height:100px}.cell{height:100px}.icim{width:42px;height:42px}
   }
 </style>
 </head>
@@ -169,7 +170,7 @@
   <img class="logo" src="[LOGO_URL]" alt="" onerror="this.style.display='none'">
   <h1 class="event">Recognition &amp; Awards<span class="lower">Into Tomorrow</span></h1>
   <div class="divider"></div>
-  <p class="sub">Kính chào Master. Vui lòng nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện.</p>
+  <p class="sub">Kính chào Quý Master. Vui lòng nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện.</p>
 
   <!-- MÀN 1: NHẬP MÃ -->
   <div class="card" id="screen1">
@@ -182,7 +183,7 @@
   <!-- MÀN 2: KHÁM PHÁ QUÀ -->
   <div class="card hidden" id="screen2">
     <div class="hello" id="hello"></div>
-    <p class="hint">Chúc mừng bạn đã trở thành một trong 200 khách mời đặc biệt của INTO TOMORROW. Ban Tổ Chức trân trọng dành riêng cho bạn một phần quà tri ân — hãy khám phá ngay.</p>
+    <p class="hint">Chị là một trong 200 khách mời đặc biệt của INTO TOMORROW.<br><br>Ban Tổ Chức trân trọng dành riêng cho chị một phần quà tri ân vì đã đồng hành cùng GIVEHADA trong suốt thời gian qua!</p>
     <div class="slot" id="slot">
       <div class="reel"><div class="strip" id="strip0"></div></div>
       <div class="reel"><div class="strip" id="strip1"></div></div>
@@ -198,7 +199,7 @@
     <div class="prizebox">
       <div class="pic" id="rIcon">🎁</div>
       <div class="pname" id="rPrize"></div>
-      <div class="couponlbl">Phần quà Ban Tổ Chức dành riêng cho bạn</div>
+      <div class="couponlbl">Đây là phần quà của Quý Master</div>
       <div class="coupon"><span id="rCoupon"></span>
         <button class="copy" onclick="copyCoupon()" id="btnCopy">SAO CHÉP</button>
       </div>
@@ -217,8 +218,8 @@
       📍 <b>Địa điểm:</b> H2Y BUILDING
     </div>
     <p>Ban Tổ Chức rất mong được đón tiếp bạn tại INTO TOMORROW.<br>Vui lòng cho chúng tôi biết kế hoạch của bạn:</p>
-    <button class="rsvp-btn rsvp-yes" onclick="sendRsvp('Tham dự')">Tôi chắc chắn sẽ tham dự</button>
-    <button class="rsvp-btn rsvp-maybe" onclick="sendRsvp('Xem xét')">Tôi sẽ sắp xếp lịch và phản hồi sau</button>
+    <button class="rsvp-btn rsvp-yes" onclick="sendRsvp('Tham dự')">Tôi chắc chắn sẽ tham dự!</button>
+    <button class="rsvp-btn rsvp-maybe" onclick="sendRsvp('Xem xét')">Tôi sẽ phản hồi sau!</button>
     <button class="rsvp-btn rsvp-no" onclick="sendRsvp('Không tham dự')">Rất tiếc, tôi bận lịch nên không thể tham dự</button>
   </div>
 </div>
@@ -229,12 +230,14 @@ var API_URL = 'https://script.google.com/macros/s/AKfycbxxbxuQ2kHp2kR2C5OwDoe42m
 
 /* ====== DANH SÁCH QUÀ HIỂN THỊ TRÊN SLOT (sửa tại đây) ======
    name PHẢI khớp đúng với cột "Qua" trong Google Sheets.        */
+/* icon dùng ảnh Twemoji -> hiển thị GIỐNG NHAU trên mọi thiết bị */
+var TW = 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/72x72/';
 var PRIZES = [
-  {name:'Voucher giảm 10%',  icon:'🎫'},
-  {name:'Voucher giảm 20%',  icon:'💙'},
-  {name:'Voucher giảm 30%',  icon:'✨'},
-  {name:'Voucher giảm 50%',  icon:'👑'},
-  {name:'Khóa học Mentor Foundations', icon:'🎁'}
+  {name:'Voucher giảm 10%',  icon: TW+'1f3ab.png'},
+  {name:'Voucher giảm 20%',  icon: TW+'1f499.png'},
+  {name:'Voucher giảm 30%',  icon: TW+'2728.png'},
+  {name:'Voucher giảm 50%',  icon: TW+'1f451.png'},
+  {name:'Khóa học Mentor Foundations', icon: TW+'1f381.png'}
 ];
 /* ============================================================ */
 
@@ -250,15 +253,22 @@ function api(action, code, extra){
     .then(function(r){ return r.json(); });
 }
 
+/* Tự co chữ lời chào để tên luôn nằm trên 1 hàng */
+function fitHello(){
+  var el=$('hello'); var size=22;
+  el.style.fontSize=size+'px';
+  while(el.scrollWidth>el.clientWidth && size>12){ size--; el.style.fontSize=size+'px'; }
+}
+
 /* POPUP XÁC NHẬN THAM DỰ */
 function openRsvp(){ document.getElementById('rsvpOverlay').classList.add('on'); }
 function sendRsvp(choice){
   var m=document.getElementById('rsvpModal');
   m.innerHTML='<div class="rsvp-done">Đang ghi nhận...</div>';
   api('rsvp', currentCode, '&choice='+encodeURIComponent(choice)).then(function(res){
-    var msg = choice==='Tham dự' ? 'Tuyệt vời! Ban Tổ Chức rất mong được đón tiếp bạn tại sự kiện.' :
+    var msg = choice==='Tham dự' ? 'Ban Tổ Chức rất mong được đón tiếp Quý Master tại sự kiện.' :
               choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ bạn!' :
-              'Đã ghi nhận. Rất tiếc vì vắng bạn — hẹn gặp lại ở những sự kiện sau!';
+              'Đã ghi nhận. Rất tiếc vì sự vắng mặt của chị! Hẹn gặp lại ở những sự kiện sau!';
     m.innerHTML='<h3>✦ Cảm ơn bạn</h3><div class="rsvp-done">'+msg+'</div>';
     setTimeout(function(){document.getElementById('rsvpOverlay').classList.remove('on')},2200);
   }).catch(function(){
@@ -283,7 +293,7 @@ function buildStrips(){
     var html='';
     for(var l=0;l<LOOPS;l++){
       for(var p=0;p<PRIZES.length;p++){
-        html+='<div class="cell"><div class="ic">'+PRIZES[p].icon+'</div></div>';
+        html+='<div class="cell"><img class="icim" src="'+PRIZES[p].icon+'" alt=""></div>';
       }
     }
     $('strip'+r).innerHTML=html;
@@ -312,6 +322,7 @@ function onCheck(){
     if(res.used){ showResult(res.prize,res.coupon,res.maskedEmail,true,res.rsvp); return }
     $('hello').textContent='Chào mừng Master '+res.name+'!';
     buildStrips(); show('screen2');
+    fitHello();
   }).catch(function(e){
     busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='XÁC NHẬN THAM DỰ';
     $('err1').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
@@ -363,7 +374,7 @@ function animateTo(prizeName,done){
 
 function showResult(prize,coupon,email,already,rsvp){
   var idx=prizeIndex(prize);
-  $('rIcon').textContent = idx>=0?PRIZES[idx].icon:'🎁';
+  $('rIcon').innerHTML = '<img src="'+(idx>=0?PRIZES[idx].icon:TW+'1f381.png')+'" alt="">';
   $('rPrize').textContent=prize;
   $('rCoupon').textContent=coupon;
   $('rEmail').textContent=email;
