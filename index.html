@@ -4,85 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<!-- SEO + preview Zalo/Facebook (chạy trên GitHub nên các thẻ này CÓ tác dụng) -->
+<!-- SEO + preview Zalo/Facebook -->
 <title>RECOGNITION & AWARDS INTO TOMORROW — GIVEHADA & PHARMESTHETIC</title>
-<meta name="description" content="Nhập ID MASTER để đăng ký sự kiện RECOGNITION & AWARDS INTO TOMORROW — 16:00 ngày 09/09/2026 tại H2Y BUILDING — và quay ngay quà tặng may mắn dành riêng cho bạn!">
+<meta name="description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện RECOGNITION & AWARDS — INTO TOMORROW, 16:00 ngày 09/09/2026.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RECOGNITION & AWARDS INTO TOMORROW — Đăng ký & Quay quà may mắn">
-<meta property="og:description" content="Nhập ID MASTER để đăng ký sự kiện — 16:00 ngày 09/09/2026 tại H2Y BUILDING — và quay ngay quà tặng may mắn!">
+<meta property="og:title" content="RECOGNITION & AWARDS — INTO TOMORROW | Xác nhận tham dự & Nhận quà">
+<meta property="og:description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt và khám phá phần quà Ban Tổ Chức dành riêng cho bạn.">
 <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Q4cPE-vfoyJdMS9pNXKPAljQGWc_nRwI">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold-light:#F5D061; --gold:#D4AF37; --gold-dark:#B8860B;
-    --bg:#0b0b0d; --panel:#141417; --text:#ece4cf; --muted:#a89c78;
+    --accent:#6aaddc; --accent-soft:#8cc4ea; --navy-mid:#1b345a; --bg:#212c40;
+    --text:#ffffff; --muted:#a9bdd6;
+    --serif:'Times New Roman', Times, serif;
+    --sans: Helvetica, Arial, sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{
-    min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,#26221a 0%,var(--bg) 60%);
-    color:var(--text);font-family:'Montserrat',sans-serif;
-    display:flex;flex-direction:column;align-items:center;padding:24px 16px 48px;
+    min-height:100vh;
+    background:radial-gradient(1200px 700px at 50% -10%, #6aaddc22 0%, var(--navy-mid) 45%, var(--bg) 75%);
+    background-color:var(--bg);
+    color:var(--text);font-family:var(--sans);
+    display:flex;flex-direction:column;align-items:center;padding:32px 16px 56px;
     overflow-x:hidden;position:relative;
   }
-  .spark{position:fixed;width:3px;height:3px;border-radius:50%;background:var(--gold-light);
-    opacity:0;animation:twinkle 4s infinite;pointer-events:none;z-index:0}
-  @keyframes twinkle{0%,100%{opacity:0}50%{opacity:.7}}
+  /* hạt sáng nền */
+  .spark{position:fixed;width:3px;height:3px;border-radius:50%;background:var(--accent-soft);
+    opacity:0;animation:twinkle 4.5s infinite;pointer-events:none;z-index:0}
+  @keyframes twinkle{0%,100%{opacity:0}50%{opacity:.6}}
 
   .wrap{position:relative;z-index:1;width:100%;max-width:480px;text-align:center}
-  .logo{max-height:72px;margin:8px auto 12px;display:block}
+  .logo{max-height:64px;margin:4px auto 20px;display:block}
   h1.event{
-    font-family:'Playfair Display',serif;font-size:30px;letter-spacing:2px;margin-bottom:6px;
-    background:linear-gradient(120deg,var(--gold-dark),var(--gold-light) 40%,#fff6d8 50%,var(--gold-light) 60%,var(--gold-dark));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:6px;margin-bottom:2px;
+    color:var(--text);text-transform:uppercase;
   }
-  .sub{color:var(--muted);font-size:14px;margin-bottom:28px;letter-spacing:.5px}
-  .divider{width:120px;height:1px;margin:0 auto 24px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  h1.event .lower{display:block;font-size:20px;letter-spacing:10px;color:var(--accent-soft);margin-top:8px}
+  .sub{color:var(--muted);font-size:13.5px;margin:22px auto 30px;letter-spacing:.4px;line-height:1.8;max-width:400px}
+  .divider{width:140px;height:1px;margin:0 auto 30px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent)}
 
   .card{
-    background:linear-gradient(180deg,#17171b,#101013);
-    border:1px solid rgba(212,175,55,.45);border-radius:16px;padding:32px 24px;
-    box-shadow:0 0 40px rgba(212,175,55,.12), inset 0 1px 0 rgba(255,255,255,.05);
+    background:linear-gradient(180deg,#26334b,#1d2739);
+    border:1px solid rgba(106,173,220,.4);border-radius:16px;padding:36px 26px;
+    box-shadow:0 0 46px rgba(106,173,220,.14), inset 0 1px 0 rgba(255,255,255,.06);
   }
-  label{display:block;font-size:12px;letter-spacing:2px;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+  label{display:block;font-family:var(--serif);font-size:13px;letter-spacing:3px;color:var(--accent-soft);margin-bottom:12px;text-transform:uppercase}
   input#code{
     width:100%;padding:14px;text-align:center;font-size:20px;letter-spacing:4px;
-    font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;
-    background:#0c0c0e;border:1px solid rgba(212,175,55,.5);border-radius:10px;color:var(--gold-light);
+    font-family:var(--sans);font-weight:700;text-transform:uppercase;
+    background:#17202f;border:1px solid rgba(106,173,220,.5);border-radius:10px;color:var(--text);
     outline:none;transition:.25s;
   }
-  input#code:focus{border-color:var(--gold-light);box-shadow:0 0 14px rgba(245,208,97,.35)}
+  input#code:focus{border-color:var(--accent-soft);box-shadow:0 0 16px rgba(106,173,220,.35)}
   .btn{
-    margin-top:20px;width:100%;padding:15px;border:none;border-radius:10px;cursor:pointer;
-    font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;
-    background:linear-gradient(135deg,var(--gold-dark),var(--gold-light),var(--gold-dark));
-    background-size:200% 100%;color:#151006;transition:.3s;
+    margin-top:22px;width:100%;padding:15px;border:none;border-radius:10px;cursor:pointer;
+    font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:3px;text-transform:uppercase;
+    background:linear-gradient(135deg,var(--navy-mid),var(--accent),var(--navy-mid));
+    background-size:220% 100%;color:#fff;transition:.35s;
+    border:1px solid rgba(140,196,234,.5);
   }
-  .btn:hover{background-position:100% 0;box-shadow:0 0 22px rgba(245,208,97,.45);transform:translateY(-1px)}
+  .btn:hover{background-position:100% 0;box-shadow:0 0 24px rgba(106,173,220,.45);transform:translateY(-1px)}
   .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
-  .error{color:#e77;font-size:13px;margin-top:12px;min-height:18px}
+  .error{color:#ff9d9d;font-size:13px;margin-top:12px;min-height:18px;line-height:1.6}
 
-  .hello{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-light);margin-bottom:4px}
-  .hint{color:var(--muted);font-size:13px;margin-bottom:22px}
+  .hello{font-family:'Great Vibes',cursive;font-size:34px;color:var(--accent-soft);margin-bottom:8px}
+  .hint{color:var(--muted);font-size:13px;margin-bottom:24px;line-height:1.8}
 
+  /* SLOT MACHINE */
   .slot{
     position:relative;display:flex;gap:10px;justify-content:center;
-    background:linear-gradient(180deg,#1b1b20,#0e0e11);
-    border:2px solid var(--gold);border-radius:14px;padding:16px;
-    box-shadow:0 0 28px rgba(212,175,55,.28), inset 0 0 18px rgba(0,0,0,.7);
+    background:linear-gradient(180deg,#1b2740,#141d2c);
+    border:2px solid var(--accent);border-radius:14px;padding:16px;
+    box-shadow:0 0 30px rgba(106,173,220,.3), inset 0 0 18px rgba(0,0,0,.6);
   }
   .reel{
     width:30%;max-width:120px;height:120px;overflow:hidden;border-radius:8px;
-    background:#08080a;border:1px solid rgba(212,175,55,.35);position:relative;
+    background:#101828;border:1px solid rgba(106,173,220,.35);position:relative;
   }
   .reel::before,.reel::after{
     content:'';position:absolute;left:0;right:0;height:30px;z-index:2;pointer-events:none;
   }
-  .reel::before{top:0;background:linear-gradient(#08080a,transparent)}
-  .reel::after{bottom:0;background:linear-gradient(transparent,#08080a)}
+  .reel::before{top:0;background:linear-gradient(#101828,transparent)}
+  .reel::after{bottom:0;background:linear-gradient(transparent,#101828)}
   .strip{will-change:transform}
   .cell{height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
   .cell .ic{font-size:40px;line-height:1}
@@ -90,40 +97,43 @@
   .spinning .strip{filter:blur(2px)}
   .slot .line{
     position:absolute;left:8px;right:8px;top:50%;height:2px;transform:translateY(-1px);
-    background:linear-gradient(90deg,transparent,rgba(245,208,97,.55),transparent);pointer-events:none;z-index:3;
+    background:linear-gradient(90deg,transparent,rgba(140,196,234,.6),transparent);pointer-events:none;z-index:3;
   }
 
-  .congrats{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-light);margin-bottom:14px}
+  /* RESULT */
+  .congrats{font-family:var(--serif);font-size:25px;letter-spacing:1px;color:var(--accent-soft);margin-bottom:14px}
   .prizebox{
-    border:1px dashed var(--gold);border-radius:12px;padding:22px 16px;margin:14px 0 20px;
-    background:rgba(212,175,55,.06);
+    border:1px dashed var(--accent);border-radius:12px;padding:22px 16px;margin:14px 0 20px;
+    background:rgba(106,173,220,.08);
   }
   .prizebox .pic{font-size:44px}
-  .prizebox .pname{font-size:19px;font-weight:700;color:var(--gold-light);margin-top:8px}
-  .couponlbl{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:16px}
+  .prizebox .pname{font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;margin-top:8px;letter-spacing:.5px}
+  .couponlbl{font-size:11px;letter-spacing:2px;color:var(--accent-soft);text-transform:uppercase;margin-top:16px;line-height:1.7}
   .coupon{
-    font-size:24px;font-weight:700;letter-spacing:3px;color:#fff;margin-top:4px;
+    font-size:24px;font-weight:700;letter-spacing:3px;color:#fff;margin-top:6px;
     display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
   }
   .copy{
-    font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--gold);cursor:pointer;
-    background:transparent;color:var(--gold-light);letter-spacing:1px;font-family:'Montserrat',sans-serif;
+    font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--accent);cursor:pointer;
+    background:transparent;color:var(--accent-soft);letter-spacing:1px;font-family:var(--sans);
   }
-  .copy:hover{background:rgba(212,175,55,.15)}
+  .copy:hover{background:rgba(106,173,220,.15)}
   .mailnote{
-    font-size:13.5px;color:var(--text);line-height:1.7;margin-top:6px;
-    border-top:1px solid rgba(212,175,55,.25);padding-top:16px;
+    font-size:13.5px;color:var(--text);line-height:1.8;margin-top:6px;
+    border-top:1px solid rgba(106,173,220,.3);padding-top:16px;
   }
-  .mailnote b{color:var(--gold-light)}
+  .mailnote b{color:var(--accent-soft)}
   .thanks{margin-top:14px;color:var(--muted);font-size:13px;font-style:italic}
   .hidden{display:none}
 
+  /* confetti xanh - trắng */
   .cf{position:fixed;top:-12px;width:9px;height:14px;z-index:9;pointer-events:none;
     animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.2}}
 
   @media(max-width:400px){
-    h1.event{font-size:24px}
+    h1.event{font-size:21px;letter-spacing:4px}
+    h1.event .lower{font-size:16px;letter-spacing:7px}
     .reel{height:100px}.cell{height:100px}.cell .ic{font-size:32px}
   }
 </style>
@@ -131,42 +141,45 @@
 <body>
 <div class="wrap">
   <img class="logo" src="[LOGO_URL]" alt="" onerror="this.style.display='none'">
-  <h1 class="event">RECOGNITION &amp; AWARDS<br>INTO TOMORROW</h1>
-  <p class="sub">Nhập ID MASTER để đăng ký &amp; quay quà may mắn</p>
+  <h1 class="event">Recognition &amp; Awards<span class="lower">Into Tomorrow</span></h1>
   <div class="divider"></div>
+  <p class="sub">Kính chào Master. Vui lòng nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện.</p>
 
+  <!-- MÀN 1: NHẬP MÃ -->
   <div class="card" id="screen1">
     <label for="code">ID MASTER của bạn</label>
     <input id="code" maxlength="20" placeholder="VD: VIP001" autocomplete="off">
-    <button class="btn" id="btnCheck" onclick="onCheck()">Đăng ký tham dự</button>
+    <button class="btn" id="btnCheck" onclick="onCheck()">Xác nhận tham dự</button>
     <div class="error" id="err1"></div>
   </div>
 
+  <!-- MÀN 2: KHÁM PHÁ QUÀ -->
   <div class="card hidden" id="screen2">
     <div class="hello" id="hello"></div>
-    <p class="hint">Bạn có 1 lượt quay may mắn — chúc bạn nhận được phần quà ưng ý!</p>
+    <p class="hint">Chúc mừng bạn đã trở thành một trong 200 khách mời đặc biệt của INTO TOMORROW. Ban Tổ Chức trân trọng dành riêng cho bạn một phần quà tri ân — hãy khám phá ngay.</p>
     <div class="slot" id="slot">
       <div class="reel"><div class="strip" id="strip0"></div></div>
       <div class="reel"><div class="strip" id="strip1"></div></div>
       <div class="reel"><div class="strip" id="strip2"></div></div>
       <div class="line"></div>
     </div>
-    <button class="btn" id="btnSpin" onclick="onSpin()">✦ &nbsp;QUAY&nbsp; ✦</button>
+    <button class="btn" id="btnSpin" onclick="onSpin()">✦ &nbsp;KHÁM PHÁ QUÀ TẶNG&nbsp; ✦</button>
     <div class="error" id="err2"></div>
   </div>
 
+  <!-- MÀN 3: KẾT QUẢ -->
   <div class="card hidden" id="screen3">
-    <div class="congrats">🎉 Chúc mừng!</div>
+    <div class="congrats">✦ Chúc mừng Master!</div>
     <div class="prizebox">
       <div class="pic" id="rIcon">🎁</div>
       <div class="pname" id="rPrize"></div>
-      <div class="couponlbl">Mã ưu đãi riêng của bạn</div>
+      <div class="couponlbl">Phần quà Ban Tổ Chức dành riêng cho bạn</div>
       <div class="coupon"><span id="rCoupon"></span>
         <button class="copy" onclick="copyCoupon()" id="btnCopy">SAO CHÉP</button>
       </div>
     </div>
-    <p class="mailnote">Quà tặng và <b>thư mời tham dự</b> sẽ được gửi tới email<br><b id="rEmail"></b></p>
-    <p class="thanks">Hẹn gặp bạn tại sự kiện. Trân trọng!</p>
+    <p class="mailnote">Thư mời chính thức cùng quà tặng dành riêng cho bạn sẽ được gửi tới email<br><b id="rEmail"></b></p>
+    <p class="thanks">Hẹn gặp bạn tại INTO TOMORROW. Trân trọng!</p>
   </div>
 </div>
 
@@ -178,10 +191,10 @@ var API_URL = 'https://script.google.com/macros/s/AKfycbxxbxuQ2kHp2kR2C5OwDoe42m
    name PHẢI khớp đúng với cột "Qua" trong Google Sheets.        */
 var PRIZES = [
   {name:'Voucher giảm 10%',  icon:'🎫'},
-  {name:'Voucher giảm 20%',  icon:'💛'},
+  {name:'Voucher giảm 20%',  icon:'💙'},
   {name:'Voucher giảm 30%',  icon:'✨'},
   {name:'Voucher giảm 50%',  icon:'👑'},
-  {name:'Quà tặng đặc biệt', icon:'🎁'}
+  {name:'Khóa học Mentor Foundations', icon:'🎁'}
 ];
 /* ============================================================ */
 
@@ -235,35 +248,35 @@ function onCheck(){
   if(!code){$('err1').textContent='Vui lòng nhập ID MASTER.';return}
   busy=true;$('btnCheck').disabled=true;$('btnCheck').textContent='ĐANG KIỂM TRA...';
   api('check', code).then(function(res){
-    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='ĐĂNG KÝ THAM DỰ';
+    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='XÁC NHẬN THAM DỰ';
     if(res.error){$('err1').textContent='Lỗi hệ thống: '+res.error;return}
-    if(!res.valid){$('err1').textContent=res.message;return}
+    if(!res.valid){$('err1').textContent='ID chưa chính xác. Vui lòng kiểm tra lại hoặc liên hệ Ban Tổ Chức.';return}
     currentCode=code;
     if(res.used){ showResult(res.prize,res.coupon,res.maskedEmail,true); return }
-    $('hello').textContent='Chào mừng '+res.name+'!';
+    $('hello').textContent='Chào mừng Master '+res.name+'!';
     buildStrips(); show('screen2');
   }).catch(function(e){
-    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='ĐĂNG KÝ THAM DỰ';
+    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='XÁC NHẬN THAM DỰ';
     $('err1').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
   });
 }
 $('code').addEventListener('keydown',function(e){if(e.key==='Enter')onCheck()});
 $('code').addEventListener('input',function(){this.value=this.value.toUpperCase()});
 
-/* MÀN 2: quay */
+/* MÀN 2: mở quà */
 function onSpin(){
   if(busy) return;
-  busy=true;$('btnSpin').disabled=true;$('btnSpin').textContent='ĐANG QUAY...';$('err2').textContent='';
+  busy=true;$('btnSpin').disabled=true;$('btnSpin').textContent='ĐANG MỞ QUÀ...';$('err2').textContent='';
   api('spin', currentCode).then(function(res){
     if(res.error || !res.ok){
-      busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ QUAY ✦';
+      busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ KHÁM PHÁ QUÀ TẶNG ✦';
       $('err2').textContent=res.error?('Lỗi hệ thống: '+res.error):res.message;return;
     }
     animateTo(res.prize,function(){
       setTimeout(function(){ showResult(res.prize,res.coupon,res.maskedEmail,false); busy=false; },700);
     });
   }).catch(function(e){
-    busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ QUAY ✦';
+    busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ KHÁM PHÁ QUÀ TẶNG ✦';
     $('err2').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
   });
 }
@@ -297,7 +310,7 @@ function showResult(prize,coupon,email,already){
   $('rPrize').textContent=prize;
   $('rCoupon').textContent=coupon;
   $('rEmail').textContent=email;
-  if(already) $('screen3').querySelector('.congrats').textContent='🎉 Bạn đã quay trước đó!';
+  if(already) $('screen3').querySelector('.congrats').textContent='✦ Bạn đã nhận quà trước đó!';
   show('screen3');
 }
 function copyCoupon(){
@@ -309,8 +322,9 @@ function copyCoupon(){
   function ok(){$('btnCopy').textContent='ĐÃ CHÉP ✓';setTimeout(function(){$('btnCopy').textContent='SAO CHÉP'},1600)}
 }
 
+/* confetti xanh - trắng */
 function confetti(){
-  var colors=['#F5D061','#D4AF37','#B8860B','#fff6d8'];
+  var colors=['#6aaddc','#8cc4ea','#ffffff','#1b345a'];
   for(var i=0;i<70;i++){
     var c=document.createElement('div');c.className='cf';
     c.style.left=Math.random()*100+'vw';
