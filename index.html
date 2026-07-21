@@ -169,6 +169,7 @@ a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !i
 .reveal{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
 .reveal .rlbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .reveal .rname{font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.3}
+.reveal .rdesc{font-size:12px;line-height:1.7;color:var(--muted);margin:8px auto 0;max-width:300px}
 .reveal .rmiss{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.45;color:var(--muted)}
 .coupon-row{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
 .coupon-code{font-size:19px;font-weight:700;letter-spacing:.16em;padding:9px 14px;border-radius:9px;
@@ -184,7 +185,8 @@ a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !i
 .sumrow img{width:34px;height:34px;flex:none}
 .sumrow .sn{flex:1;min-width:0}
 .sumrow .sname{font-family:var(--serif);font-size:16px;font-weight:700;line-height:1.35}
-.sumrow .scode{font-size:11px;letter-spacing:.14em;color:var(--accent);margin-top:3px;font-weight:600}
+.sumrow .sdesc{font-size:11.5px;line-height:1.65;color:var(--muted);margin-top:4px}
+.sumrow .scode{font-size:11px;letter-spacing:.14em;color:var(--accent);margin-top:4px;font-weight:600}
 .sumrow.miss .sname{font-style:italic;font-weight:400;color:var(--muted);font-size:15px}
 .mailnote{font-size:12.5px;color:var(--muted);line-height:1.85;margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
 .mailnote b{color:#fff;font-weight:600}
@@ -327,12 +329,16 @@ var TOTAL_TURNS = 3;
    → "name" PHẢI khớp đúng chữ trong cột Qua1 / Qua2 / Qua3 của Google Sheets */
 var TW = 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/72x72/';
 var PRIZES = [
-  {name:'Voucher giảm 10%',              icon: TW+'1f3ab.png'},
-  {name:'Voucher giảm 20%',              icon: TW+'1f499.png'},
-  {name:'Voucher giảm 30%',              icon: TW+'2728.png'},
-  {name:'Voucher giảm 50%',              icon: TW+'1f451.png'},
-  {name:'Khóa học Mentor Foundations',   icon: TW+'1f393.png'},
-  {name:'Quà tặng đặc biệt',             icon: TW+'1f381.png'}
+  {name:'Voucher 5%',  icon: TW+'2b50.png',
+   desc:'Áp dụng cho đơn tích lũy tối thiểu 15 triệu — 2 đơn đầu tiên'},
+  {name:'Voucher 6%',  icon: TW+'1f48e.png',
+   desc:'Áp dụng cho đơn tích lũy tối thiểu 100 triệu — 2 đơn đầu tiên'},
+  {name:'Voucher 7%',  icon: TW+'1f451.png',
+   desc:'Áp dụng cho đơn tích lũy tối thiểu 200 triệu — 3 đơn đầu tiên'},
+  {name:'Khóa học Mentor Foundation', icon: TW+'1f393.png',
+   desc:'1 suất tham dự khóa học Mentor Foundation'},
+  {name:'Vé tham dự sự kiện', icon: TW+'1f3ab.png',
+   desc:'Cộng thêm 1 vé tham dự sự kiện'}
 ];
 var MISS_ICON = TW+'1f340.png';               // cỏ 4 lá cho ô "may mắn lần sau"
 var MISS_TEXT = 'Chúc bạn may mắn lần sau!';
@@ -405,6 +411,10 @@ function iconOf(name, miss){
   if(miss) return MISS_ICON;
   var i=poolIndex(name);
   return i<PRIZES.length ? PRIZES[i].icon : TW+'1f381.png';
+}
+function descOf(name){
+  var i=poolIndex(name);
+  return i<PRIZES.length ? (PRIZES[i].desc||'') : '';
 }
 
 function animateTo(prizeName, miss, done){
@@ -496,8 +506,10 @@ function showReveal(r, t){
   if(r.miss){
     html='<div class="rmiss">'+MISS_TEXT+'</div>';
   }else{
+    var dsc = descOf(r.prize);
     html='<img class="icim" style="margin:0 auto 10px" src="'+iconOf(r.prize,false)+'" alt="">'
-       + '<div class="rname">'+esc(r.prize)+'</div>';
+       + '<div class="rname">'+esc(r.prize)+'</div>'
+       + (dsc ? '<div class="rdesc">'+esc(dsc)+'</div>' : '');
     if(r.coupon) html+='<div class="coupon-row"><span class="coupon-code" id="cp'+t+'">'+esc(r.coupon)+'</span>'
        + '<button class="copy" onclick="copyCode(\'cp'+t+'\',this)">Sao chép</button></div>';
   }
@@ -523,6 +535,7 @@ function renderSummary(already){
     html+='<div class="sumrow'+(r.miss?' miss':'')+'">'
         + '<img src="'+iconOf(r.prize,r.miss)+'" alt="">'
         + '<div class="sn"><div class="sname">'+(r.miss?MISS_TEXT:esc(r.prize))+'</div>'
+        + (!r.miss && descOf(r.prize) ? '<div class="sdesc">'+esc(descOf(r.prize))+'</div>' : '')
         + (r.coupon && !r.miss ? '<div class="scode">MÃ: '+esc(r.coupon)+'</div>' : '')
         + '</div></div>';
   }
