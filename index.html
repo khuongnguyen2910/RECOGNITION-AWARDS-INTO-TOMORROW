@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1b2a">
+<!-- Chặn iOS Safari tự biến ngày giờ / số điện thoại thành link xanh -->
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
 
 <title>RECOGNITION &amp; AWARDS — INTO TOMORROW | GIVEHADA &amp; PHARMESTHETIC</title>
 <meta name="description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện RECOGNITION &amp; AWARDS — INTO TOMORROW, 16:00 ngày 09/09/2026.">
@@ -42,8 +44,11 @@ body{
 /* ẢNH NỀN FULL-BLEED */
 #bgLayer{
   position:fixed;inset:0;z-index:0;
-  background-image:url('assets/bg.jpg');
-  background-size:cover;background-position:center center;
+  /* nếu chưa upload assets/bg.jpg thì vẫn còn nền gradient dự phòng */
+  background-color:#12324a;
+  background-image:url('assets/bg.jpg'),
+    linear-gradient(160deg,#2a6f91 0%,#1b4a68 35%,#0f2c42 68%,#081a28 100%);
+  background-size:cover, cover;background-position:center center;
   transform:scale(1.06);
   animation:bgDrift 26s ease-in-out infinite alternate;
 }
@@ -128,8 +133,15 @@ input#code:focus{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.
 .screen{display:none}
 .screen.on{display:block;animation:fadeUp .55s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hello{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.25;margin-bottom:10px}
+/* iOS Safari tự bọc ngày giờ trong <a> — ép về màu trắng, bỏ gạch chân */
+a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !important}
+
+.hello{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35;margin-bottom:10px;color:var(--muted)}
+.hello .uname{display:block;font-style:normal;font-weight:700;font-size:clamp(19px,5.6vw,25px);
+  line-height:1.28;color:#fff;margin-top:4px;text-transform:uppercase;letter-spacing:.005em}
 .hint{color:var(--muted);font-size:12.5px;line-height:1.85;margin-bottom:22px}
+.hint .evt{display:block;font-family:var(--serif);font-weight:700;font-style:normal;
+  font-size:16px;letter-spacing:.06em;color:#fff;margin:6px 0 8px}
 
 .turnbar{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
 .dot{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.22);transition:.35s}
@@ -245,7 +257,9 @@ input#code:focus{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.
   <div class="screen" id="screen2">
     <div class="eyebrow" style="margin-bottom:10px">Into Tomorrow</div>
     <div class="hello" id="hello"></div>
-    <p class="hint" id="hint2">Bạn là một trong những khách mời đặc biệt của <b>INTO TOMORROW</b>.<br>Ban Tổ Chức dành tặng bạn <b>3 lượt mở quà</b> tri ân.</p>
+    <p class="hint" id="hint2">Bạn là một trong những khách mời đặc biệt của
+      <span class="evt">INTO TOMORROW</span>
+      Ban Tổ Chức dành tặng bạn <b>3 lượt mở quà</b> tri ân.</p>
 
     <div class="card solid">
       <div class="turnlbl" id="turnLbl">Lượt 1 / 3</div>
@@ -353,7 +367,20 @@ function primeMusic(){
 /* ─── API ─── */
 function api(action, code, extra){
   return fetch(API_URL+'?action='+action+'&code='+encodeURIComponent(code)+(extra||''))
-    .then(function(r){return r.json()});
+    .then(function(r){ return r.text() })
+    .then(function(txt){
+      try { return JSON.parse(txt); }
+      catch(e){
+        // Apps Script trả về HTML => sai link /exec hoặc chưa mở quyền "Bất kỳ ai"
+        console.error('Apps Script không trả JSON:', txt.slice(0,300));
+        throw new Error('CONFIG');
+      }
+    });
+}
+function apiErrMsg(e){
+  return (e && e.message==='CONFIG')
+    ? 'Chưa kết nối được dữ liệu. Ban Tổ Chức vui lòng kiểm tra lại link Apps Script (API_URL) và quyền truy cập "Bất kỳ ai".'
+    : 'Không kết nối được máy chủ. Vui lòng thử lại.';
 }
 
 /* ─── SLOT ─── */
@@ -415,11 +442,11 @@ function onCheck(){
     turn = results.length;
     $('rEmail').textContent=userEmail;
     if(turn>=TOTAL_TURNS){ renderSummary(true); return }
-    $('hello').textContent='Chào mừng Master '+res.name+'!';
+    $('hello').innerHTML='Chào mừng Master<span class="uname">'+esc(res.name)+'</span>';
     buildStrips(); renderTurnBar(); show('screen2');
-  }).catch(function(){
+  }).catch(function(e){
     busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='Xác nhận tham dự';
-    $('err1').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
+    $('err1').textContent=apiErrMsg(e);
   });
 }
 $('code').addEventListener('keydown',function(e){if(e.key==='Enter'){this.blur();onCheck()}});
@@ -457,9 +484,9 @@ function onSpin(){
         $('btnNext').textContent = (turn>=TOTAL_TURNS) ? 'Xem tổng kết quà tặng' : 'Lượt tiếp theo →';
       },520);
     });
-  }).catch(function(){
+  }).catch(function(e){
     busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦  Mở quà  ✦';
-    $('err2').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
+    $('err2').textContent=apiErrMsg(e);
   });
 }
 
