@@ -249,7 +249,7 @@ a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !i
 
     <div class="card">
       <div class="field-label">ID Master của bạn</div>
-      <input id="code" maxlength="20" placeholder="VD: VIP001" autocomplete="off" autocapitalize="characters" inputmode="text" enterkeyhint="go">
+      <input id="code" maxlength="20" placeholder="VD: GIVEHADA" autocomplete="off" autocapitalize="characters" inputmode="text" enterkeyhint="go">
       <button class="btn" id="btnCheck" onclick="onCheck()">Xác nhận tham dự</button>
       <div class="error" id="err1"></div>
     </div>
@@ -259,9 +259,10 @@ a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !i
   <div class="screen" id="screen2">
     <div class="eyebrow" style="margin-bottom:10px">Into Tomorrow</div>
     <div class="hello" id="hello"></div>
-    <p class="hint" id="hint2">Bạn là một trong những khách mời đặc biệt của
+    <p class="hint" id="hint2">200 vòng quay may mắn dành cho 200 Master đăng ký đầu tiên
+      là 1 trong những món quà đặc biệt của
       <span class="evt">INTO TOMORROW</span>
-      Ban Tổ Chức dành tặng bạn <b>3 lượt mở quà</b> tri ân.</p>
+      Dành tặng bạn <b>3 lượt mở quà</b> tri ân.</p>
 
     <div class="card solid">
       <div class="turnlbl" id="turnLbl">Lượt 1 / 3</div>
@@ -287,7 +288,7 @@ a, a:visited, a:hover, a:active{color:inherit !important;text-decoration:none !i
   <!-- ══════ MÀN 3: TỔNG KẾT ══════ -->
   <div class="screen" id="screen3">
     <div class="eyebrow" style="margin-bottom:10px">Into Tomorrow</div>
-    <div class="title-script" style="font-size:30px" id="sumTitle">Chúc mừng Master!</div>
+    <div class="title-script" style="font-size:30px" id="sumTitle">Chúc mừng QUÝ Master!</div>
     <p class="hint" style="margin-top:14px">Đây là những phần quà Ban Tổ Chức dành riêng cho bạn.</p>
 
     <div class="card solid">
@@ -540,7 +541,7 @@ function renderSummary(already){
         + '</div></div>';
   }
   $('sumList').innerHTML=html;
-  $('sumTitle').textContent = already ? 'Bạn đã mở quà rồi!' : 'Chúc mừng Master!';
+  $('sumTitle').textContent = already ? 'Bạn đã mở quà rồi!' : 'Chúc mừng QUÝ Master!';
   $('rEmail').textContent=userEmail;
   $('btnRsvpAgain').style.display = hasRsvp ? 'none' : 'block';
   show('screen3');
@@ -566,9 +567,9 @@ function sendRsvp(choice){
   var m=$('rsvpModal');
   m.innerHTML='<div class="grip"></div><div class="rsvp-done">Đang ghi nhận...</div>';
   api('rsvp', currentCode, '&choice='+encodeURIComponent(choice)).then(function(){
-    var msg = choice==='Tham dự' ? 'Ban Tổ Chức rất mong được đón tiếp Quý Master tại sự kiện.' :
-              choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ bạn!' :
-              'Đã ghi nhận. Rất tiếc vì sự vắng mặt của bạn — hẹn gặp lại ở những sự kiện sau!';
+    var msg = choice==='Tham dự' ? 'GIVEHADA rất mong được đón tiếp Quý Master tại sự kiện.' :
+              choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ MASTER!' :
+              'Đã ghi nhận. Rất tiếc vì sự vắng mặt của Master, hẹn gặp lại ở những sự kiện sau!';
     hasRsvp=true; $('btnRsvpAgain').style.display='none';
     m.innerHTML='<div class="grip"></div><h3>Cảm ơn bạn</h3><div class="rsvp-done">'+msg+'</div>';
     setTimeout(function(){$('rsvpOverlay').classList.remove('on')},2400);
