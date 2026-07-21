@@ -317,7 +317,8 @@ var PRIZES = [
   {name:'Voucher giảm 20%',              icon: TW+'1f499.png'},
   {name:'Voucher giảm 30%',              icon: TW+'2728.png'},
   {name:'Voucher giảm 50%',              icon: TW+'1f451.png'},
-  {name:'Khóa học Mentor Foundations',   icon: TW+'1f381.png'}
+  {name:'Khóa học Mentor Foundations',   icon: TW+'1f393.png'},
+  {name:'Quà tặng đặc biệt',             icon: TW+'1f381.png'}
 ];
 var MISS_ICON = TW+'1f340.png';               // cỏ 4 lá cho ô "may mắn lần sau"
 var MISS_TEXT = 'Chúc bạn may mắn lần sau!';
@@ -552,33 +553,6 @@ function confetti(){
     setTimeout(function(el){return function(){el.remove()}}(c),5200);
   }
 }
-</script>
-
-<script>
-/* ===== CHẾ ĐỘ DEMO — không cần Google Sheets. Nhập ID: DEMO ===== */
-(function(){
-  var DB = { DEMO: { name:'Nguyễn Thị Demo', email:'demo@example.com',
-      gifts:[{prize:'Voucher giảm 30%',coupon:'IT30-DEMO',miss:false},
-             {prize:'',coupon:'',miss:true},
-             {prize:'Khóa học Mentor Foundations',coupon:'MF-DEMO',miss:false}],
-      used:0, rsvp:'' } };
-  window.fetch = function(url){
-    var q = {}; url.split('?')[1].split('&').forEach(function(p){var k=p.split('=');q[k[0]]=decodeURIComponent(k[1]||'')});
-    var u = DB[String(q.code).toUpperCase()];
-    var out;
-    if(!u) out = {valid:false, ok:false, message:'ID không hợp lệ (demo: gõ DEMO)'};
-    else if(q.action==='check') out = {valid:true,name:u.name,maskedEmail:'de***@example.com',
-        turnsUsed:u.used,results:u.gifts.slice(0,u.used),rsvp:!!u.rsvp};
-    else if(q.action==='spin'){
-      if(u.used>=3) out={ok:false,done:true,message:'Đã hết lượt',results:u.gifts};
-      else { u.used++; var g=u.gifts[u.used-1];
-        out={ok:true,turn:u.used,turnsLeft:3-u.used,prize:g.prize,coupon:g.coupon,miss:g.miss,
-             maskedEmail:'de***@example.com',rsvp:!!u.rsvp}; }
-    }
-    else { u.rsvp=q.choice; out={ok:true}; }
-    return new Promise(function(res){ setTimeout(function(){ res({json:function(){return Promise.resolve(out)}}) }, 550) });
-  };
-})();
 </script>
 </body>
 </html>
