@@ -2,409 +2,583 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
 
-<!-- SEO + preview Zalo/Facebook -->
-<title>RECOGNITION & AWARDS INTO TOMORROW — GIVEHADA & PHARMESTHETIC</title>
-<meta name="description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện RECOGNITION & AWARDS — INTO TOMORROW, 16:00 ngày 09/09/2026.">
+<title>RECOGNITION &amp; AWARDS — INTO TOMORROW | GIVEHADA &amp; PHARMESTHETIC</title>
+<meta name="description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện RECOGNITION &amp; AWARDS — INTO TOMORROW, 16:00 ngày 09/09/2026.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RECOGNITION & AWARDS — INTO TOMORROW | Xác nhận tham dự & Nhận quà">
-<meta property="og:description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt và khám phá phần quà Ban Tổ Chức dành riêng cho bạn.">
+<meta property="og:title" content="RECOGNITION &amp; AWARDS — INTO TOMORROW | Xác nhận tham dự &amp; Nhận quà">
+<meta property="og:description" content="Kính chào Master. Nhập ID Master để xác nhận vị trí khách mời đặc biệt và khám phá 3 phần quà Ban Tổ Chức dành riêng cho bạn.">
 <meta property="og:image" content="https://lh3.googleusercontent.com/d/1Q4cPE-vfoyJdMS9pNXKPAljQGWc_nRwI">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --accent:#6aaddc; --accent-soft:#8cc4ea; --navy-mid:#1b345a; --bg:#212c40;
-    --text:#ffffff; --muted:#a9bdd6;
-    --serif:'Times New Roman', Times, serif;
-    --sans: Helvetica, Arial, sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    min-height:100vh;
-    background:linear-gradient(180deg, #131724 0%, #1b345a 55%, #6aaddc 130%);
-    background-color:#131724;background-attachment:fixed;
-    color:var(--text);font-family:var(--sans);
-    display:flex;flex-direction:column;align-items:center;padding:32px 16px 56px;
-    overflow-x:hidden;position:relative;
-  }
-  /* hạt sáng nền */
-  .spark{position:fixed;width:3px;height:3px;border-radius:50%;background:var(--accent-soft);
-    opacity:0;animation:twinkle 4.5s infinite;pointer-events:none;z-index:0}
-  @keyframes twinkle{0%,100%{opacity:0}50%{opacity:.6}}
+:root{
+  --ink:#ffffff;
+  --muted:rgba(255,255,255,.72);
+  --faint:rgba(255,255,255,.45);
+  --line:rgba(255,255,255,.28);
+  --glass:rgba(10,26,42,.42);
+  --glass-strong:rgba(8,22,36,.72);
+  --accent:#9fd0ef;
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --pad: max(20px, env(safe-area-inset-left));
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:var(--sans);color:var(--ink);
+  background:#0a1622;
+  min-height:100svh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* ẢNH NỀN FULL-BLEED */
+#bgLayer{
+  position:fixed;inset:0;z-index:0;
+  background-image:url('assets/bg.jpg');
+  background-size:cover;background-position:center center;
+  transform:scale(1.06);
+  animation:bgDrift 26s ease-in-out infinite alternate;
+}
+@keyframes bgDrift{from{transform:scale(1.06) translateY(0)}to{transform:scale(1.12) translateY(-12px)}}
+#bgLayer::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(0,0,0,.42), transparent 60%),
+    linear-gradient(180deg, rgba(6,16,26,.35) 0%, rgba(6,16,26,.15) 38%, rgba(5,13,22,.72) 78%, rgba(4,10,18,.92) 100%);
+}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-  .wrap{position:relative;z-index:1;width:100%;max-width:480px;text-align:center}
-  .logo{max-height:64px;margin:4px auto 20px;display:block}
-  h1.event{
-    font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:3px;margin-bottom:2px;
-    color:var(--text);text-transform:uppercase;
-  }
-  h1.event .lower{display:block;font-size:20px;letter-spacing:6px;color:var(--accent-soft);margin-top:8px}
-  .sub{color:var(--muted);font-size:13.5px;margin:22px auto 30px;letter-spacing:.4px;line-height:1.8;max-width:400px}
-  .divider{width:140px;height:1px;margin:0 auto 30px;
-    background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+/* nhạc nền */
+#musicBtn{
+  position:fixed;top:calc(12px + env(safe-area-inset-top));right:14px;z-index:60;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:rgba(8,22,36,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:var(--ink);font-size:17px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.25s;
+}
+#musicBtn:active{transform:scale(.92)}
+#musicBtn.off{color:var(--faint)}
+#musicBtn .eq{display:flex;gap:2px;align-items:flex-end;height:15px}
+#musicBtn .eq i{width:2.5px;background:currentColor;border-radius:2px;animation:eq .9s ease-in-out infinite}
+#musicBtn .eq i:nth-child(1){height:6px;animation-delay:0s}
+#musicBtn .eq i:nth-child(2){height:14px;animation-delay:.15s}
+#musicBtn .eq i:nth-child(3){height:9px;animation-delay:.3s}
+#musicBtn .eq i:nth-child(4){height:12px;animation-delay:.45s}
+@keyframes eq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+#musicBtn.off .eq i{animation-play-state:paused;transform:scaleY(.3)}
 
-  .card{
-    background:linear-gradient(180deg,#26334b,#1d2739);
-    border:1px solid rgba(106,173,220,.4);border-radius:16px;padding:26px 18px;
-    box-shadow:0 0 46px rgba(106,173,220,.14), inset 0 1px 0 rgba(255,255,255,.06);
-  }
-  label{display:block;font-family:var(--serif);font-size:13px;letter-spacing:3px;color:var(--accent-soft);margin-bottom:12px;text-transform:uppercase}
-  input#code{
-    width:100%;padding:14px;text-align:center;font-size:20px;letter-spacing:4px;
-    font-family:var(--sans);font-weight:700;text-transform:uppercase;
-    background:#17202f;border:1px solid rgba(106,173,220,.5);border-radius:10px;color:var(--text);
-    outline:none;transition:.25s;
-  }
-  input#code:focus{border-color:var(--accent-soft);box-shadow:0 0 16px rgba(106,173,220,.35)}
-  .btn{
-    margin-top:22px;width:100%;padding:15px;border:none;border-radius:10px;cursor:pointer;
-    font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:3px;text-transform:uppercase;
-    background:linear-gradient(135deg,var(--navy-mid),var(--accent),var(--navy-mid));
-    background-size:220% 100%;color:#fff;transition:.35s;
-    border:1px solid rgba(140,196,234,.5);
-  }
-  .btn:hover{background-position:100% 0;box-shadow:0 0 24px rgba(106,173,220,.45);transform:translateY(-1px)}
-  .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
-  .error{color:#ff9d9d;font-size:13px;margin-top:12px;min-height:18px;line-height:1.6}
+/* KHUNG CHÍNH */
+.stage{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:calc(64px + env(safe-area-inset-top)) var(--pad) calc(40px + env(safe-area-inset-bottom))}
+.wrap{width:100%;max-width:440px;text-align:center}
 
-  .hello{font-family:var(--serif);font-size:22px;letter-spacing:1.5px;color:var(--accent-soft);margin-bottom:8px;
-    white-space:nowrap;overflow:hidden}
-  .hint{color:var(--muted);font-size:13px;margin-bottom:24px;line-height:1.8}
+/* HERO — theo phong cách poster */
+.eyebrow{font-size:10.5px;letter-spacing:.42em;font-weight:500;color:var(--ink);text-transform:uppercase;
+  opacity:.92;margin-bottom:16px;padding-left:.42em}
+.rule{width:112px;height:1px;background:rgba(255,255,255,.75);margin:0 auto 40px}
+.title-script{font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(30px,9vw,40px);line-height:1;letter-spacing:-.01em;margin-bottom:2px}
+.title-main{font-family:var(--serif);font-weight:900;font-style:italic;
+  font-size:clamp(40px,13.5vw,60px);line-height:.94;letter-spacing:.005em;text-transform:uppercase}
+.title-main .amp{font-style:italic;font-weight:400}
+.hero-meta{margin-top:38px;font-size:12px;letter-spacing:.18em;line-height:2.1;color:var(--ink);font-weight:600;text-transform:uppercase}
+.hero-meta .thin{font-weight:300;letter-spacing:.14em;color:var(--muted);font-size:11.5px}
+.scrollcue{margin-top:34px;font-size:10px;letter-spacing:.3em;color:var(--faint);animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(5px);opacity:1}}
 
-  /* SLOT MACHINE */
-  .slot{
-    position:relative;display:flex;gap:10px;justify-content:center;
-    background:linear-gradient(180deg,#1b2740,#141d2c);
-    border:2px solid var(--accent);border-radius:14px;padding:16px;
-    box-shadow:0 0 30px rgba(106,173,220,.3), inset 0 0 18px rgba(0,0,0,.6);
-  }
-  .reel{
-    width:30%;max-width:120px;height:120px;overflow:hidden;border-radius:8px;
-    background:#101828;border:1px solid rgba(106,173,220,.35);position:relative;
-  }
-  .reel::before,.reel::after{
-    content:'';position:absolute;left:0;right:0;height:30px;z-index:2;pointer-events:none;
-  }
-  .reel::before{top:0;background:linear-gradient(#101828,transparent)}
-  .reel::after{bottom:0;background:linear-gradient(transparent,#101828)}
-  .strip{will-change:transform}
-  .cell{height:120px;display:flex;align-items:center;justify-content:center}
-  .icim{width:52px;height:52px;display:block}
-  .spinning .strip{filter:blur(2px)}
+/* THẺ KÍNH */
+.card{
+  background:var(--glass);
+  border:1px solid var(--line);border-radius:20px;
+  backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%);
+  padding:28px 20px;box-shadow:0 18px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.card.solid{background:var(--glass-strong)}
+.field-label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-left:.32em}
+input#code{
+  width:100%;padding:16px 12px;text-align:center;font-size:19px;letter-spacing:.22em;
+  font-family:var(--sans);font-weight:600;text-transform:uppercase;
+  background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:12px;color:#fff;
+  outline:none;transition:.25s;
+}
+input#code::placeholder{color:rgba(255,255,255,.3);letter-spacing:.12em;font-weight:400}
+input#code:focus{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.12)}
+.btn{
+  margin-top:18px;width:100%;padding:17px;border-radius:12px;cursor:pointer;
+  font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  background:#fff;color:#0d2136;border:1px solid #fff;transition:.22s;
+  min-height:52px;
+}
+.btn:active{transform:scale(.985)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ghost{background:transparent;color:#fff;border:1px solid var(--line);font-weight:500}
+.btn.ghost:active{background:rgba(255,255,255,.1)}
+.error{color:#ffc0c0;font-size:12.5px;margin-top:12px;min-height:16px;line-height:1.65}
 
-  /* RESULT */
-  .congrats{font-family:var(--serif);font-size:25px;letter-spacing:1px;color:var(--accent-soft);margin-bottom:14px}
-  .prizebox{
-    border:1px dashed var(--accent);border-radius:12px;padding:12px 16px;margin:8px 0 14px;
-    background:rgba(106,173,220,.08);
-  }
-  .prizebox .pic img{width:56px;height:56px;display:inline-block}
-  .prizebox .pname{font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;margin-top:8px;letter-spacing:.5px}
-  .couponlbl{font-size:11px;letter-spacing:2px;color:var(--accent-soft);text-transform:uppercase;margin-top:16px;line-height:1.7}
-  .coupon{
-    font-size:24px;font-weight:700;letter-spacing:3px;color:#fff;margin-top:6px;
-    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
-  }
-  .copy{
-    font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--accent);cursor:pointer;
-    background:transparent;color:var(--accent-soft);letter-spacing:1px;font-family:var(--sans);
-  }
-  .copy:hover{background:rgba(106,173,220,.15)}
-  .mailnote{
-    font-size:13.5px;color:var(--text);line-height:1.8;margin-top:6px;
-    border-top:1px solid rgba(106,173,220,.3);padding-top:16px;
-  }
-  .mailnote b{color:var(--accent-soft)}
-  .thanks{margin-top:14px;color:var(--muted);font-size:13px;font-style:italic}
-  .hidden{display:none}
+/* MÀN QUAY */
+.screen{display:none}
+.screen.on{display:block;animation:fadeUp .55s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hello{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.25;margin-bottom:10px}
+.hint{color:var(--muted);font-size:12.5px;line-height:1.85;margin-bottom:22px}
 
-  /* POPUP XÁC NHẬN THAM DỰ */
-  .overlay{
-    position:fixed;inset:0;background:rgba(10,14,24,.75);backdrop-filter:blur(3px);
-    display:flex;align-items:center;justify-content:center;z-index:20;padding:20px;
-    opacity:0;pointer-events:none;transition:.35s;
-  }
-  .overlay.on{opacity:1;pointer-events:auto}
-  .modal{
-    width:100%;max-width:400px;text-align:center;
-    background:linear-gradient(180deg,#26334b,#1d2739);
-    border:1px solid rgba(106,173,220,.5);border-radius:16px;padding:28px 22px;
-    box-shadow:0 0 46px rgba(106,173,220,.25);
-    transform:translateY(14px);transition:.35s;
-  }
-  .overlay.on .modal{transform:translateY(0)}
-  .modal h3{font-family:var(--serif);font-weight:normal;font-size:20px;letter-spacing:1px;color:var(--accent-soft);margin-bottom:8px}
-  .modal p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:20px}
-  .rsvp-btn{
-    display:block;width:100%;margin-top:10px;padding:13px;border-radius:10px;cursor:pointer;
-    font-family:var(--sans);font-size:13.5px;letter-spacing:.5px;transition:.25s;
-  }
-  .rsvp-yes{
-    border:1px solid rgba(140,196,234,.5);font-weight:700;color:#fff;
-    background:linear-gradient(135deg,var(--navy-mid),var(--accent),var(--navy-mid));background-size:220% 100%;
-  }
-  .rsvp-yes:hover{background-position:100% 0;box-shadow:0 0 20px rgba(106,173,220,.4)}
-  .rsvp-maybe,.rsvp-no{
-    border:1px solid rgba(106,173,220,.4);background:transparent;color:var(--muted);
-  }
-  .rsvp-maybe:hover,.rsvp-no:hover{color:#fff;border-color:var(--accent-soft);background:rgba(106,173,220,.1)}
-  .rsvp-done{font-size:14px;color:var(--accent-soft);line-height:1.8;padding:10px 0}
+.turnbar{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
+.dot{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.22);transition:.35s}
+.dot.done{background:rgba(255,255,255,.95)}
+.dot.now{background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.turnlbl{font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
 
-  /* confetti xanh - trắng */
-  .cf{position:fixed;top:-12px;width:9px;height:14px;z-index:9;pointer-events:none;
-    animation:fall linear forwards}
-  @keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.2}}
+.slot{
+  position:relative;display:flex;gap:8px;justify-content:center;
+  background:rgba(4,14,24,.55);
+  border:1px solid var(--line);border-radius:16px;padding:12px;
+  box-shadow:inset 0 0 26px rgba(0,0,0,.55);
+}
+.reel{flex:1;max-width:112px;height:104px;overflow:hidden;border-radius:10px;
+  background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);position:relative}
+.reel::before,.reel::after{content:'';position:absolute;left:0;right:0;height:26px;z-index:2;pointer-events:none}
+.reel::before{top:0;background:linear-gradient(rgba(4,14,24,.95),transparent)}
+.reel::after{bottom:0;background:linear-gradient(transparent,rgba(4,14,24,.95))}
+.strip{will-change:transform}
+.cell{height:104px;display:flex;align-items:center;justify-content:center}
+.icim{width:46px;height:46px;display:block}
+.spinning .strip{filter:blur(2.5px)}
 
-  @media(max-width:400px){
-    h1.event{font-size:21px;letter-spacing:4px}
-    h1.event .lower{font-size:16px;letter-spacing:7px}
-    .reel{height:100px}.cell{height:100px}.icim{width:42px;height:42px}
-  }
+/* KẾT QUẢ TỪNG LƯỢT */
+.reveal{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
+.reveal .rlbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.reveal .rname{font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.3}
+.reveal .rmiss{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.45;color:var(--muted)}
+.coupon-row{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
+.coupon-code{font-size:19px;font-weight:700;letter-spacing:.16em;padding:9px 14px;border-radius:9px;
+  background:rgba(255,255,255,.1);border:1px dashed var(--line)}
+.copy{font-size:9.5px;letter-spacing:.18em;padding:9px 12px;border-radius:8px;border:1px solid var(--line);
+  background:transparent;color:#fff;cursor:pointer;font-family:var(--sans);text-transform:uppercase;min-height:34px}
+.copy:active{background:rgba(255,255,255,.14)}
+
+/* TỔNG KẾT */
+.sumlist{margin:18px 0 4px;text-align:left}
+.sumrow{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.sumrow:last-child{border-bottom:none}
+.sumrow img{width:34px;height:34px;flex:none}
+.sumrow .sn{flex:1;min-width:0}
+.sumrow .sname{font-family:var(--serif);font-size:16px;font-weight:700;line-height:1.35}
+.sumrow .scode{font-size:11px;letter-spacing:.14em;color:var(--accent);margin-top:3px;font-weight:600}
+.sumrow.miss .sname{font-style:italic;font-weight:400;color:var(--muted);font-size:15px}
+.mailnote{font-size:12.5px;color:var(--muted);line-height:1.85;margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.mailnote b{color:#fff;font-weight:600}
+.thanks{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted)}
+
+/* POPUP RSVP */
+.overlay{position:fixed;inset:0;background:rgba(4,12,20,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:flex-end;justify-content:center;z-index:70;padding:0;
+  opacity:0;pointer-events:none;transition:.35s}
+.overlay.on{opacity:1;pointer-events:auto}
+.modal{width:100%;max-width:460px;text-align:center;
+  background:rgba(10,26,42,.92);border:1px solid var(--line);border-bottom:none;
+  border-radius:22px 22px 0 0;padding:26px 20px calc(26px + env(safe-area-inset-bottom));
+  transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.9,.25,1)}
+.overlay.on .modal{transform:translateY(0)}
+.modal .grip{width:38px;height:4px;border-radius:4px;background:rgba(255,255,255,.3);margin:0 auto 18px}
+.modal h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;margin-bottom:14px}
+.modal .info{border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:16px;
+  background:rgba(255,255,255,.06);font-size:12.5px;line-height:2;text-align:left}
+.modal p{color:var(--muted);font-size:12.5px;line-height:1.8;margin-bottom:16px}
+.rsvp-btn{display:block;width:100%;margin-top:9px;padding:15px;border-radius:12px;cursor:pointer;
+  font-family:var(--sans);font-size:13px;transition:.22s;min-height:50px}
+.rsvp-yes{border:1px solid #fff;background:#fff;color:#0d2136;font-weight:700;letter-spacing:.06em}
+.rsvp-maybe,.rsvp-no{border:1px solid var(--line);background:transparent;color:var(--muted)}
+.rsvp-btn:active{transform:scale(.985)}
+.rsvp-done{font-size:13.5px;color:var(--ink);line-height:1.9;padding:12px 0}
+
+/* confetti */
+.cf{position:fixed;top:-14px;width:8px;height:13px;z-index:50;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110svh) rotate(720deg);opacity:.15}}
+
+@media (min-width:640px){ .overlay{align-items:center;padding:20px} .modal{border-radius:22px;border-bottom:1px solid var(--line);transform:translateY(24px)} }
+@media (prefers-reduced-motion:reduce){ *{animation-duration:.01ms !important;transition-duration:.12s !important} }
 </style>
 </head>
 <body>
+<div id="bgLayer"></div>
+<div class="grain"></div>
+
+<audio id="bgm" loop preload="auto" src="assets/background-music.mp3"></audio>
+<button id="musicBtn" class="off" aria-label="Bật/tắt nhạc nền" onclick="toggleMusic()">
+  <span class="eq"><i></i><i></i><i></i><i></i></span>
+</button>
+
+<div class="stage">
 <div class="wrap">
-  <img class="logo" src="[LOGO_URL]" alt="" onerror="this.style.display='none'">
-  <h1 class="event">Recognition &amp; Awards<span class="lower">Into Tomorrow</span></h1>
-  <div class="divider"></div>
-  <p class="sub">Kính chào Quý Master. Vui lòng nhập ID Master để xác nhận vị trí khách mời đặc biệt của bạn tại sự kiện.</p>
 
-  <!-- MÀN 1: NHẬP MÃ -->
-  <div class="card" id="screen1">
-    <label for="code">ID MASTER của bạn</label>
-    <input id="code" maxlength="20" placeholder="VD: VIP001" autocomplete="off">
-    <button class="btn" id="btnCheck" onclick="onCheck()">Xác nhận tham dự</button>
-    <div class="error" id="err1"></div>
+  <!-- ══════ MÀN 1: HERO + NHẬP ID ══════ -->
+  <div class="screen on" id="screen1">
+    <div class="eyebrow">GIVEHADA &nbsp;&amp;&nbsp; PHARMESTHETIC</div>
+    <div class="rule"></div>
+    <div class="title-script">Recognition <span class="amp">&amp;</span> Awards</div>
+    <div class="title-main">Into<br>Tomorrow</div>
+    <div class="hero-meta">
+      16:00 — 09.09.2026<br>
+      <span class="thin">H2Y Building</span>
+    </div>
+
+    <div style="height:36px"></div>
+
+    <div class="card">
+      <div class="field-label">ID Master của bạn</div>
+      <input id="code" maxlength="20" placeholder="VD: VIP001" autocomplete="off" autocapitalize="characters" inputmode="text" enterkeyhint="go">
+      <button class="btn" id="btnCheck" onclick="onCheck()">Xác nhận tham dự</button>
+      <div class="error" id="err1"></div>
+    </div>
   </div>
 
-  <!-- MÀN 2: KHÁM PHÁ QUÀ -->
-  <div class="card hidden" id="screen2">
+  <!-- ══════ MÀN 2: 3 LƯỢT QUAY ══════ -->
+  <div class="screen" id="screen2">
+    <div class="eyebrow" style="margin-bottom:10px">Into Tomorrow</div>
     <div class="hello" id="hello"></div>
-    <p class="hint">Chị là một trong 200 khách mời đặc biệt của INTO TOMORROW.<br><br>Ban Tổ Chức trân trọng dành riêng cho chị một phần quà tri ân vì đã đồng hành cùng GIVEHADA trong suốt thời gian qua!</p>
-    <div class="slot" id="slot">
-      <div class="reel"><div class="strip" id="strip0"></div></div>
-      <div class="reel"><div class="strip" id="strip1"></div></div>
-      <div class="reel"><div class="strip" id="strip2"></div></div>
+    <p class="hint" id="hint2">Bạn là một trong những khách mời đặc biệt của <b>INTO TOMORROW</b>.<br>Ban Tổ Chức dành tặng bạn <b>3 lượt mở quà</b> tri ân.</p>
+
+    <div class="card solid">
+      <div class="turnlbl" id="turnLbl">Lượt 1 / 3</div>
+      <div class="turnbar" id="turnBar"><span class="dot now"></span><span class="dot"></span><span class="dot"></span></div>
+
+      <div class="slot" id="slot">
+        <div class="reel"><div class="strip" id="strip0"></div></div>
+        <div class="reel"><div class="strip" id="strip1"></div></div>
+        <div class="reel"><div class="strip" id="strip2"></div></div>
+      </div>
+
+      <div class="reveal" id="reveal" style="display:none">
+        <div class="rlbl" id="revealLbl">Phần quà lượt 1</div>
+        <div id="revealBody"></div>
+      </div>
+
+      <button class="btn" id="btnSpin" onclick="onSpin()">✦&nbsp; Mở quà &nbsp;✦</button>
+      <button class="btn ghost" id="btnNext" style="display:none" onclick="nextTurn()">Lượt tiếp theo</button>
+      <div class="error" id="err2"></div>
     </div>
-    <button class="btn" id="btnSpin" onclick="onSpin()">✦ &nbsp;KHÁM PHÁ QUÀ TẶNG&nbsp; ✦</button>
-    <div class="error" id="err2"></div>
   </div>
 
-  <!-- MÀN 3: KẾT QUẢ -->
-  <div class="card hidden" id="screen3">
-    <div class="congrats">✦ Chúc mừng Master!</div>
-    <div class="prizebox">
-      <div class="pic" id="rIcon">🎁</div>
-      <div class="pname" id="rPrize"></div>
-      <div class="couponlbl">Đây là phần quà của Quý Master</div>
-      <div class="coupon"><span id="rCoupon"></span>
-        <button class="copy" onclick="copyCoupon()" id="btnCopy">SAO CHÉP</button>
-      </div>
+  <!-- ══════ MÀN 3: TỔNG KẾT ══════ -->
+  <div class="screen" id="screen3">
+    <div class="eyebrow" style="margin-bottom:10px">Into Tomorrow</div>
+    <div class="title-script" style="font-size:30px" id="sumTitle">Chúc mừng Master!</div>
+    <p class="hint" style="margin-top:14px">Đây là những phần quà Ban Tổ Chức dành riêng cho bạn.</p>
+
+    <div class="card solid">
+      <div class="sumlist" id="sumList"></div>
+      <p class="mailnote">Thư mời chính thức cùng quà tặng sẽ được gửi tới email<br><b id="rEmail"></b></p>
+      <p class="thanks">Hẹn gặp bạn tại INTO TOMORROW. Trân trọng!</p>
+      <button class="btn ghost" style="margin-top:20px" id="btnRsvpAgain" onclick="openRsvp()">Xác nhận tham dự</button>
     </div>
-    <p class="mailnote">Thư mời chính thức cùng quà tặng dành riêng cho bạn sẽ được gửi tới email<br><b id="rEmail"></b></p>
-    <p class="thanks">Hẹn gặp bạn tại INTO TOMORROW. Trân trọng!</p>
   </div>
+
+</div>
 </div>
 
-<!-- POPUP XÁC NHẬN THAM DỰ -->
+<!-- ══════ POPUP XÁC NHẬN THAM DỰ ══════ -->
 <div class="overlay" id="rsvpOverlay">
   <div class="modal" id="rsvpModal">
-    <h3>✦ Xác nhận tham dự</h3>
-    <div style="border:1px solid rgba(106,173,220,.35);border-radius:10px;padding:12px 14px;margin-bottom:16px;background:rgba(106,173,220,.08);font-size:13.5px;line-height:2;color:#fff;">
-      🕐 <b>Thời gian:</b> 16:00 — 09/09/2026<br>
-      📍 <b>Địa điểm:</b> H2Y BUILDING
+    <div class="grip"></div>
+    <h3>Xác nhận tham dự</h3>
+    <div class="info">
+      🕐 &nbsp;<b>Thời gian:</b> 16:00 — 09/09/2026<br>
+      📍 &nbsp;<b>Địa điểm:</b> H2Y BUILDING
     </div>
     <p>Ban Tổ Chức rất mong được đón tiếp bạn tại INTO TOMORROW.<br>Vui lòng cho chúng tôi biết kế hoạch của bạn:</p>
     <button class="rsvp-btn rsvp-yes" onclick="sendRsvp('Tham dự')">Tôi chắc chắn sẽ tham dự!</button>
-    <button class="rsvp-btn rsvp-maybe" onclick="sendRsvp('Xem xét')">Tôi sẽ phản hồi sau!</button>
+    <button class="rsvp-btn rsvp-maybe" onclick="sendRsvp('Xem xét')">Tôi sẽ phản hồi sau</button>
     <button class="rsvp-btn rsvp-no" onclick="sendRsvp('Không tham dự')">Rất tiếc, tôi bận lịch nên không thể tham dự</button>
   </div>
 </div>
 
 <script>
-/* ====== API: link Web App Apps Script của bạn (đuôi /exec) ====== */
+/* ═══════════ CẤU HÌNH ═══════════ */
+
+/* Link Web App Apps Script (đuôi /exec) — DÁN LINK MỚI SAU KHI DEPLOY LẠI */
 var API_URL = 'https://script.google.com/macros/s/AKfycbxxbxuQ2kHp2kR2C5OwDoe42m7L97GjqninOGpsd6D7Gt14Wz9XGXYLbH9ON9MsMCJQ1Q/exec';
 
-/* ====== DANH SÁCH QUÀ HIỂN THỊ TRÊN SLOT (sửa tại đây) ======
-   name PHẢI khớp đúng với cột "Qua" trong Google Sheets.        */
-/* icon dùng ảnh Twemoji -> hiển thị GIỐNG NHAU trên mọi thiết bị */
+var TOTAL_TURNS = 3;
+
+/* DANH SÁCH QUÀ HIỂN THỊ TRÊN SLOT
+   → "name" PHẢI khớp đúng chữ trong cột Qua1 / Qua2 / Qua3 của Google Sheets */
 var TW = 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/72x72/';
 var PRIZES = [
-  {name:'Voucher giảm 10%',  icon: TW+'1f3ab.png'},
-  {name:'Voucher giảm 20%',  icon: TW+'1f499.png'},
-  {name:'Voucher giảm 30%',  icon: TW+'2728.png'},
-  {name:'Voucher giảm 50%',  icon: TW+'1f451.png'},
-  {name:'Khóa học Mentor Foundations', icon: TW+'1f381.png'}
+  {name:'Voucher giảm 10%',              icon: TW+'1f3ab.png'},
+  {name:'Voucher giảm 20%',              icon: TW+'1f499.png'},
+  {name:'Voucher giảm 30%',              icon: TW+'2728.png'},
+  {name:'Voucher giảm 50%',              icon: TW+'1f451.png'},
+  {name:'Khóa học Mentor Foundations',   icon: TW+'1f381.png'}
 ];
-/* ============================================================ */
+var MISS_ICON = TW+'1f340.png';               // cỏ 4 lá cho ô "may mắn lần sau"
+var MISS_TEXT = 'Chúc bạn may mắn lần sau!';
+/* ════════════════════════════════ */
 
-var CELL_H = 120, currentCode = '', busy = false;
-if (window.matchMedia('(max-width:400px)').matches) CELL_H = 100;
+var CELL_H = 104, LOOPS = 12;
+var currentCode = '', busy = false, turn = 0, results = [], userEmail = '', hasRsvp = false;
 
 function $(id){return document.getElementById(id)}
-function show(id){['screen1','screen2','screen3'].forEach(function(s){$(s).classList.toggle('hidden', s!==id)})}
+function show(id){['screen1','screen2','screen3'].forEach(function(s){$(s).classList.toggle('on', s===id)});window.scrollTo(0,0)}
 
-/* Gọi API Apps Script */
+/* ─── NHẠC NỀN ─── */
+var bgm = $('bgm'), musicOn = false;
+function toggleMusic(){
+  if(musicOn){ bgm.pause(); musicOn=false; }
+  else { bgm.volume=0; bgm.play().then(function(){musicOn=true;fadeIn()}).catch(function(){}); }
+  $('musicBtn').classList.toggle('off', !musicOn);
+}
+function fadeIn(){
+  var v=0; var t=setInterval(function(){ v+=.035; if(v>=.45){v=.45;clearInterval(t)} bgm.volume=v; },60);
+}
+/* thử autoplay ngay từ tương tác đầu tiên của người dùng */
+function primeMusic(){
+  if(musicOn) return;
+  bgm.volume=0;
+  bgm.play().then(function(){musicOn=true;$('musicBtn').classList.remove('off');fadeIn()}).catch(function(){});
+}
+['pointerdown','touchstart','keydown'].forEach(function(ev){
+  document.addEventListener(ev, primeMusic, {once:true, passive:true});
+});
+
+/* ─── API ─── */
 function api(action, code, extra){
-  return fetch(API_URL + '?action=' + action + '&code=' + encodeURIComponent(code) + (extra||''))
-    .then(function(r){ return r.json(); });
+  return fetch(API_URL+'?action='+action+'&code='+encodeURIComponent(code)+(extra||''))
+    .then(function(r){return r.json()});
 }
 
-/* Tự co chữ lời chào để tên luôn nằm trên 1 hàng */
-function fitHello(){
-  var el=$('hello'); var size=22;
-  el.style.fontSize=size+'px';
-  while(el.scrollWidth>el.clientWidth && size>12){ size--; el.style.fontSize=size+'px'; }
-}
-
-/* POPUP XÁC NHẬN THAM DỰ */
-function openRsvp(){ document.getElementById('rsvpOverlay').classList.add('on'); }
-function sendRsvp(choice){
-  var m=document.getElementById('rsvpModal');
-  m.innerHTML='<div class="rsvp-done">Đang ghi nhận...</div>';
-  api('rsvp', currentCode, '&choice='+encodeURIComponent(choice)).then(function(res){
-    var msg = choice==='Tham dự' ? 'Ban Tổ Chức rất mong được đón tiếp Quý Master tại sự kiện.' :
-              choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ bạn!' :
-              'Đã ghi nhận. Rất tiếc vì sự vắng mặt của chị! Hẹn gặp lại ở những sự kiện sau!';
-    m.innerHTML='<h3>✦ Cảm ơn bạn</h3><div class="rsvp-done">'+msg+'</div>';
-    setTimeout(function(){document.getElementById('rsvpOverlay').classList.remove('on')},2200);
-  }).catch(function(){
-    m.innerHTML='<h3>✦ Cảm ơn bạn</h3><div class="rsvp-done">Có lỗi kết nối, vui lòng thử lại sau.</div>';
-    setTimeout(function(){document.getElementById('rsvpOverlay').classList.remove('on')},2200);
-  });
-}
-
-/* nền lấp lánh */
-(function(){
-  for(var i=0;i<26;i++){
-    var s=document.createElement('div');s.className='spark';
-    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
-    s.style.animationDelay=(Math.random()*4)+'s';
-    document.body.appendChild(s);
-  }
-})();
-
-var LOOPS = 12;
+/* ─── SLOT ─── */
 function buildStrips(){
+  var pool = PRIZES.concat([{name:'__MISS__', icon:MISS_ICON}]);
   for(var r=0;r<3;r++){
     var html='';
-    for(var l=0;l<LOOPS;l++){
-      for(var p=0;p<PRIZES.length;p++){
-        html+='<div class="cell"><img class="icim" src="'+PRIZES[p].icon+'" alt=""></div>';
-      }
-    }
+    for(var l=0;l<LOOPS;l++)
+      for(var p=0;p<pool.length;p++)
+        html+='<div class="cell"><img class="icim" src="'+pool[p].icon+'" alt=""></div>';
     $('strip'+r).innerHTML=html;
+    $('strip'+r).style.transition='none';
     $('strip'+r).style.transform='translateY(0)';
   }
 }
-
-function prizeIndex(name){
-  name=String(name).trim();
+function poolIndex(name){
+  name=String(name||'').trim();
   for(var i=0;i<PRIZES.length;i++) if(PRIZES[i].name===name) return i;
-  return -1;
+  return PRIZES.length;   // ô MISS
+}
+function iconOf(name, miss){
+  if(miss) return MISS_ICON;
+  var i=poolIndex(name);
+  return i<PRIZES.length ? PRIZES[i].icon : TW+'1f381.png';
 }
 
-/* MÀN 1 */
+function animateTo(prizeName, miss, done){
+  var idx = miss ? PRIZES.length : poolIndex(prizeName);
+  var n = PRIZES.length+1;
+  $('slot').classList.add('spinning');
+  var finished=0;
+  for(var r=0;r<3;r++){(function(r){
+    var strip=$('strip'+r);
+    var targetY=((LOOPS-3+r)*n+idx)*CELL_H;
+    var dur=2300+r*600;
+    strip.style.transition='none';strip.style.transform='translateY(0)';
+    void strip.offsetHeight;
+    strip.style.transition='transform '+dur+'ms cubic-bezier(.15,.85,.25,1)';
+    strip.style.transform='translateY(-'+targetY+'px)';
+    setTimeout(function(){
+      if(++finished===3){ $('slot').classList.remove('spinning'); if(!miss) confetti(); done(); }
+    },dur+60);
+  })(r)}
+}
+
+/* ─── MÀN 1 ─── */
 function onCheck(){
   if(busy) return;
   var code=$('code').value.trim().toUpperCase();
   $('err1').textContent='';
   if(!code){$('err1').textContent='Vui lòng nhập ID MASTER.';return}
-  busy=true;$('btnCheck').disabled=true;$('btnCheck').textContent='ĐANG KIỂM TRA...';
+  busy=true;$('btnCheck').disabled=true;$('btnCheck').textContent='Đang kiểm tra...';
   api('check', code).then(function(res){
-    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='XÁC NHẬN THAM DỰ';
+    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='Xác nhận tham dự';
     if(res.error){$('err1').textContent='Lỗi hệ thống: '+res.error;return}
     if(!res.valid){$('err1').textContent='ID chưa chính xác. Vui lòng kiểm tra lại hoặc liên hệ Ban Tổ Chức.';return}
-    currentCode=code;
-    if(res.used){ showResult(res.prize,res.coupon,res.maskedEmail,true,res.rsvp); return }
+    currentCode=code; userEmail=res.maskedEmail||''; hasRsvp=!!res.rsvp;
+    results = res.results||[];
+    turn = results.length;
+    $('rEmail').textContent=userEmail;
+    if(turn>=TOTAL_TURNS){ renderSummary(true); return }
     $('hello').textContent='Chào mừng Master '+res.name+'!';
-    buildStrips(); show('screen2');
-    fitHello();
-  }).catch(function(e){
-    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='XÁC NHẬN THAM DỰ';
+    buildStrips(); renderTurnBar(); show('screen2');
+  }).catch(function(){
+    busy=false;$('btnCheck').disabled=false;$('btnCheck').textContent='Xác nhận tham dự';
     $('err1').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
   });
 }
-$('code').addEventListener('keydown',function(e){if(e.key==='Enter')onCheck()});
+$('code').addEventListener('keydown',function(e){if(e.key==='Enter'){this.blur();onCheck()}});
 $('code').addEventListener('input',function(){this.value=this.value.toUpperCase()});
 
-/* MÀN 2: mở quà */
+/* ─── MÀN 2: QUAY ─── */
+function renderTurnBar(){
+  var html='';
+  for(var i=0;i<TOTAL_TURNS;i++)
+    html+='<span class="dot '+(i<turn?'done':(i===turn?'now':''))+'"></span>';
+  $('turnBar').innerHTML=html;
+  $('turnLbl').textContent='Lượt '+Math.min(turn+1,TOTAL_TURNS)+' / '+TOTAL_TURNS;
+}
+
 function onSpin(){
   if(busy) return;
-  busy=true;$('btnSpin').disabled=true;$('btnSpin').textContent='ĐANG MỞ QUÀ...';$('err2').textContent='';
+  busy=true;$('btnSpin').disabled=true;$('btnSpin').textContent='Đang mở quà...';$('err2').textContent='';
+  $('reveal').style.display='none';
   api('spin', currentCode).then(function(res){
     if(res.error || !res.ok){
-      busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ KHÁM PHÁ QUÀ TẶNG ✦';
-      $('err2').textContent=res.error?('Lỗi hệ thống: '+res.error):res.message;return;
+      busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦  Mở quà  ✦';
+      $('err2').textContent = res.error ? ('Lỗi hệ thống: '+res.error) : (res.message||'Bạn đã dùng hết lượt.');
+      if(res.done){ results=res.results||results; setTimeout(function(){renderSummary(true)},1200) }
+      return;
     }
-    animateTo(res.prize,function(){
-      setTimeout(function(){ showResult(res.prize,res.coupon,res.maskedEmail,false,res.rsvp); busy=false; },700);
+    animateTo(res.prize, res.miss, function(){
+      setTimeout(function(){
+        turn = res.turn;
+        results[turn-1] = {prize:res.prize, coupon:res.coupon, miss:!!res.miss};
+        showReveal(results[turn-1], turn);
+        renderTurnBar();
+        busy=false;
+        $('btnSpin').style.display='none';
+        $('btnNext').style.display='block';
+        $('btnNext').textContent = (turn>=TOTAL_TURNS) ? 'Xem tổng kết quà tặng' : 'Lượt tiếp theo →';
+      },520);
     });
-  }).catch(function(e){
-    busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦ KHÁM PHÁ QUÀ TẶNG ✦';
+  }).catch(function(){
+    busy=false;$('btnSpin').disabled=false;$('btnSpin').textContent='✦  Mở quà  ✦';
     $('err2').textContent='Không kết nối được máy chủ. Vui lòng thử lại.';
   });
 }
 
-function animateTo(prizeName,done){
-  var idx=prizeIndex(prizeName);
-  if(idx<0){ done(); return }
-  $('slot').classList.add('spinning');
-  var n=PRIZES.length, finished=0;
-  for(var r=0;r<3;r++){
-    (function(r){
-      var strip=$('strip'+r);
-      var targetLoop=LOOPS-3+r;
-      var targetY=(targetLoop*n+idx)*CELL_H;
-      var dur=2600+r*650;
-      strip.style.transition='none';strip.style.transform='translateY(0)';
-      void strip.offsetHeight;
-      strip.style.transition='transform '+dur+'ms cubic-bezier(.15,.85,.25,1)';
-      strip.style.transform='translateY(-'+targetY+'px)';
-      setTimeout(function(){
-        finished++;
-        if(finished===3){$('slot').classList.remove('spinning');confetti();done()}
-      },dur);
-    })(r);
+function showReveal(r, t){
+  $('revealLbl').textContent='Phần quà lượt '+t;
+  var html='';
+  if(r.miss){
+    html='<div class="rmiss">'+MISS_TEXT+'</div>';
+  }else{
+    html='<img class="icim" style="margin:0 auto 10px" src="'+iconOf(r.prize,false)+'" alt="">'
+       + '<div class="rname">'+esc(r.prize)+'</div>';
+    if(r.coupon) html+='<div class="coupon-row"><span class="coupon-code" id="cp'+t+'">'+esc(r.coupon)+'</span>'
+       + '<button class="copy" onclick="copyCode(\'cp'+t+'\',this)">Sao chép</button></div>';
+  }
+  $('revealBody').innerHTML=html;
+  $('reveal').style.display='block';
+}
+
+function nextTurn(){
+  $('btnNext').style.display='none';
+  if(turn>=TOTAL_TURNS){ renderSummary(false); return }
+  $('reveal').style.display='none';
+  buildStrips();
+  $('btnSpin').style.display='block';
+  $('btnSpin').disabled=false;
+  $('btnSpin').textContent='✦  Mở quà  ✦';
+}
+
+/* ─── MÀN 3: TỔNG KẾT ─── */
+function renderSummary(already){
+  var html='';
+  for(var i=0;i<results.length;i++){
+    var r=results[i]||{};
+    html+='<div class="sumrow'+(r.miss?' miss':'')+'">'
+        + '<img src="'+iconOf(r.prize,r.miss)+'" alt="">'
+        + '<div class="sn"><div class="sname">'+(r.miss?MISS_TEXT:esc(r.prize))+'</div>'
+        + (r.coupon && !r.miss ? '<div class="scode">MÃ: '+esc(r.coupon)+'</div>' : '')
+        + '</div></div>';
+  }
+  $('sumList').innerHTML=html;
+  $('sumTitle').textContent = already ? 'Bạn đã mở quà rồi!' : 'Chúc mừng Master!';
+  $('rEmail').textContent=userEmail;
+  $('btnRsvpAgain').style.display = hasRsvp ? 'none' : 'block';
+  show('screen3');
+  if(!already) setTimeout(confetti,250);
+  if(!hasRsvp) setTimeout(openRsvp, 1500);
+}
+
+function copyCode(id, btn){
+  var t=$(id).textContent, old=btn.textContent;
+  function ok(){btn.textContent='Đã chép ✓';setTimeout(function(){btn.textContent=old},1600)}
+  if(navigator.clipboard){ navigator.clipboard.writeText(t).then(ok, fallback) } else fallback();
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity=0;
+    document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);ok();
   }
 }
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
-function showResult(prize,coupon,email,already,rsvp){
-  var idx=prizeIndex(prize);
-  $('rIcon').innerHTML = '<img src="'+(idx>=0?PRIZES[idx].icon:TW+'1f381.png')+'" alt="">';
-  $('rPrize').textContent=prize;
-  $('rCoupon').textContent=coupon;
-  $('rEmail').textContent=email;
-  if(already) $('screen3').querySelector('.congrats').textContent='✦ Bạn đã nhận quà trước đó!';
-  show('screen3');
-  if(!rsvp) setTimeout(openRsvp, 1400); // chưa xác nhận tham dự -> hiện popup
-}
-function copyCoupon(){
-  var t=$('rCoupon').textContent;
-  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(ok,function(){
-    var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
-    ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();
+/* ─── RSVP ─── */
+function openRsvp(){ $('rsvpOverlay').classList.add('on') }
+function sendRsvp(choice){
+  var m=$('rsvpModal');
+  m.innerHTML='<div class="grip"></div><div class="rsvp-done">Đang ghi nhận...</div>';
+  api('rsvp', currentCode, '&choice='+encodeURIComponent(choice)).then(function(){
+    var msg = choice==='Tham dự' ? 'Ban Tổ Chức rất mong được đón tiếp Quý Master tại sự kiện.' :
+              choice==='Xem xét' ? 'Đã ghi nhận. Rất mong sớm nhận được xác nhận chính thức từ bạn!' :
+              'Đã ghi nhận. Rất tiếc vì sự vắng mặt của bạn — hẹn gặp lại ở những sự kiện sau!';
+    hasRsvp=true; $('btnRsvpAgain').style.display='none';
+    m.innerHTML='<div class="grip"></div><h3>Cảm ơn bạn</h3><div class="rsvp-done">'+msg+'</div>';
+    setTimeout(function(){$('rsvpOverlay').classList.remove('on')},2400);
+  }).catch(function(){
+    m.innerHTML='<div class="grip"></div><h3>Cảm ơn bạn</h3><div class="rsvp-done">Có lỗi kết nối, vui lòng thử lại sau.</div>';
+    setTimeout(function(){$('rsvpOverlay').classList.remove('on')},2400);
   });
-  function ok(){$('btnCopy').textContent='ĐÃ CHÉP ✓';setTimeout(function(){$('btnCopy').textContent='SAO CHÉP'},1600)}
 }
 
-/* confetti xanh - trắng */
+/* ─── CONFETTI ─── */
 function confetti(){
-  var colors=['#6aaddc','#8cc4ea','#ffffff','#1b345a'];
-  for(var i=0;i<70;i++){
+  var colors=['#9fd0ef','#ffffff','#6aaddc','#e8f4fb'];
+  var n = window.innerWidth<420 ? 46 : 70;
+  for(var i=0;i<n;i++){
     var c=document.createElement('div');c.className='cf';
     c.style.left=Math.random()*100+'vw';
     c.style.background=colors[Math.floor(Math.random()*colors.length)];
     c.style.animationDuration=(2+Math.random()*2.2)+'s';
     c.style.animationDelay=(Math.random()*.5)+'s';
-    c.style.transform='rotate('+Math.random()*360+'deg)';
+    c.style.opacity=.5+Math.random()*.5;
     document.body.appendChild(c);
-    setTimeout(function(el){return function(){el.remove()}}(c),5000);
+    setTimeout(function(el){return function(){el.remove()}}(c),5200);
   }
 }
+</script>
+
+<script>
+/* ===== CHẾ ĐỘ DEMO — không cần Google Sheets. Nhập ID: DEMO ===== */
+(function(){
+  var DB = { DEMO: { name:'Nguyễn Thị Demo', email:'demo@example.com',
+      gifts:[{prize:'Voucher giảm 30%',coupon:'IT30-DEMO',miss:false},
+             {prize:'',coupon:'',miss:true},
+             {prize:'Khóa học Mentor Foundations',coupon:'MF-DEMO',miss:false}],
+      used:0, rsvp:'' } };
+  window.fetch = function(url){
+    var q = {}; url.split('?')[1].split('&').forEach(function(p){var k=p.split('=');q[k[0]]=decodeURIComponent(k[1]||'')});
+    var u = DB[String(q.code).toUpperCase()];
+    var out;
+    if(!u) out = {valid:false, ok:false, message:'ID không hợp lệ (demo: gõ DEMO)'};
+    else if(q.action==='check') out = {valid:true,name:u.name,maskedEmail:'de***@example.com',
+        turnsUsed:u.used,results:u.gifts.slice(0,u.used),rsvp:!!u.rsvp};
+    else if(q.action==='spin'){
+      if(u.used>=3) out={ok:false,done:true,message:'Đã hết lượt',results:u.gifts};
+      else { u.used++; var g=u.gifts[u.used-1];
+        out={ok:true,turn:u.used,turnsLeft:3-u.used,prize:g.prize,coupon:g.coupon,miss:g.miss,
+             maskedEmail:'de***@example.com',rsvp:!!u.rsvp}; }
+    }
+    else { u.rsvp=q.choice; out={ok:true}; }
+    return new Promise(function(res){ setTimeout(function(){ res({json:function(){return Promise.resolve(out)}}) }, 550) });
+  };
+})();
 </script>
 </body>
 </html>
